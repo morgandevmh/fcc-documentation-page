@@ -1,0 +1,160 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #494A4D;
+    color: #f5f6f7;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  #navbar {
+    position: fixed;
+    top: 0;
+    height: 80px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 20;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    background-color: #353538;
+  }
+  
+  #navbar.hidden {
+    transform: translateY(-100%);
+  }
+  
+  #navbar a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #navbar ul li {
+    margin: 0 25px;
+  }
+  
+  #navbar ul li.active a {
+    color: #007bff;
+    font-weight: 600;
+  }
+  
+  #navbar ul li a:hover {
+    text-decoration: underline;
+    color: #007bff;
+    border-radius: 30px;
+  }
+  
+  h1 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  #main-doc {
+    position: absolute;
+    top: 100px;
+    padding: 0 20px;
+  }
+  
+  section {
+    margin-bottom: 90px;
+    scroll-margin-top: 120px;
+  }
+  
+  .titre2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  section header:first-of-type {
+    margin-top: 0;
+  }
+  
+  h3 {
+    text-decoration: underline;
+    margin-left: 40px;
+  }
+  
+  p {
+    margin-left: 40px;
+  }
+  
+  li {
+    margin-left: 60px;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  @media only screen and (max-width: 815px) {
+    #navbar {
+      overflow: hidden;
+      transition: max-height 0.1s ease;
+    }
+  
+    #navbar ul {
+      display:none;
+    }
+  
+    #navbar:hover {
+      height: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    #navbar:hover h1 {
+      font-size: 1em;
+      margin: 5px 0;
+    }
+  
+    #navbar:hover  {
+      width: 100%;
+      max-height: 300px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  
+    #navbar:hover ul {
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      top:-50px;
+     
+    }
+  
+    #navbar:hover ul li {
+      margin: 5px 0;
+      width: 100%;
+      text-align: center;
+    }
+  
+    #navbar:hover ul li a {
+      display: block;
+      padding: 10px 15px;
+    }
+  
+    #navbar:hover ~ #main-doc {
+      top: auto;
+      margin-top: 380px;
+      padding: 0 15px;
+    }
+  
+    #navbar:hover ~ #main-doc section {
+      scroll-margin-top: 380px;
+    }
+  }
+  
+  
