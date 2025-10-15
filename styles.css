@@ -2,17 +2,25 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    background-color: #494A4D;
+    padding: 0;
+    background-image: radial-gradient(circle at center center, transparent,rgb(33,33,33)),repeating-linear-gradient(135deg, rgb(33,33,33) 0px, rgb(33,33,33) 2px,transparent 2px, transparent 10px,rgb(33,33,33) 10px, rgb(33,33,33) 11px,transparent 11px, transparent 21px),repeating-linear-gradient(45deg, rgb(47,47,47) 0px, rgb(47,47,47) 4px,transparent 4px, transparent 8px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));
     color: #f5f6f7;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+
   }
+
+
   
   
   #navbar {
     position: fixed;
     top: 0;
-    height: 80px;
-    padding: 15px;
+    left: 0;
+    right: 0;
+    height: auto;
+    min-height: 80px;
+    padding: 25px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,6 +38,8 @@ body {
   #navbar a {
     color: white;
     text-decoration: none;
+    transition: color 0.2s ease;
+    
   }
   
   #navbar ul {
@@ -37,124 +47,165 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    gap: 35px;
   }
   
   #navbar ul li {
-    margin: 0 25px;
+    margin: 0;
   }
   
+
   #navbar ul li.active a {
     color: #007bff;
     font-weight: 600;
   }
   
   #navbar ul li a:hover {
-    text-decoration: underline;
     color: #007bff;
-    border-radius: 30px;
+
   }
   
   h1 {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin: 0;
+    line-height: 1.3;
   }
   
   #main-doc {
-    position: absolute;
-    top: 100px;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 30px 60px;
   }
   
   section {
-    margin-bottom: 90px;
-    scroll-margin-top: 120px;
+    margin-bottom: 80px;
+    scroll-margin-top: 140px;
+    border: 3px solid #1a1a1a;
+    border-radius: 16px;
+    padding: 50px 60px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #494A4D 0%, #3e3f42 100%);
+    transition: transform 0.2s ease;
+  }
+
+  section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
   }
   
   .titre2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-top: 60px;
+    margin:0 0 40px 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 20px;
   }
   
-  section header:first-of-type {
-    margin-top: 0;
-  }
+
   
   h3 {
-    text-decoration: underline;
-    margin-left: 40px;
+    font-size: 1.4rem;
+    color: #007bff;
+    margin: 40px 0 20px 0;
+    padding-left: 20px;
+    border-left: 4px solid #007bff;
+    text-transform: capitalize;
   }
   
   p {
-    margin-left: 40px;
+    margin-left: 20px 0;
+    font-size: 1.05rem;
+    text-align: justify;
+    line-height: 1.8;
+  }
+
+  ul {
+    margin: 25px 0;
+    padding-left: 20px;
   }
   
   li {
-    margin-left: 60px;
+    margin: 12px 0;
+    padding-left: 15px;
+    font-size: 1.05rem;
+    position: relative;
   }
-  
-  .bold {
+
+  li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #007bff;
     font-weight: bold;
   }
   
+  .bold {
+    font-weight: 700;
+    color: white;
+    background: rgba(0, 123, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  
+  code {
+    display: none;
+  }
+
   @media only screen and (max-width: 815px) {
     #navbar {
-      overflow: hidden;
-      transition: max-height 0.1s ease;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      height: auto;
+      min-height: 60px;
     }
   
     #navbar ul {
-      display:none;
-    }
-  
-    #navbar:hover {
-      height: auto;
+      display: none;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-  
-    #navbar:hover h1 {
-      font-size: 1em;
-      margin: 5px 0;
-    }
-  
-    #navbar:hover  {
       width: 100%;
-      max-height: 300px;
-      overflow-y: auto;
-      overflow-x: hidden;
+      gap: 10px;
+      margin-top: 15px;
     }
   
     #navbar:hover ul {
-      display:flex;
-      flex-direction: column;
-      width: 100%;
-      position: relative;
-      top:-50px;
-     
+      display: flex;
     }
   
-    #navbar:hover ul li {
-      margin: 5px 0;
-      width: 100%;
-      text-align: center;
+    #navbar h1 {
+      font-size: 1.1em;
     }
   
-    #navbar:hover ul li a {
-      display: block;
-      padding: 10px 15px;
+    #main-doc {
+      padding: 180px 20px 40px;
     }
   
-    #navbar:hover ~ #main-doc {
-      top: auto;
-      margin-top: 380px;
-      padding: 0 15px;
+    section {
+      padding: 40px 25px;
+      margin-bottom: 50px;
     }
   
-    #navbar:hover ~ #main-doc section {
-      scroll-margin-top: 380px;
+    .titre2 {
+      font-size: 1.8rem;
+    }
+  
+    h3 {
+      font-size: 1.2rem;
+      margin: 30px 0 15px 0;
+    }
+  
+    p, li {
+      font-size: 1rem;
     }
   }
+
+  header {
+    font-family: "BBH Sans Bartle", sans-serif;
+   font-weight: 80;
+   font-style: normal;
+  }
   
-  
+
